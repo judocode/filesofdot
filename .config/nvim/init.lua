@@ -4,44 +4,11 @@
 vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
 
-require('keymaps')
+require('plugins/keymaps')
+-- require('plugins.colemak-keymaps')
 
-
---vim.keymap.set('n', 'n', 'j')
---vim.keymap.set('n', 'j', 'n')
---vim.keymap.set('n', 'k', 'e')
---vim.keymap.set('n', 'e', 'k')
---
-
-vim.keymap.set('n', '<leader>pv', vim.cmd.Ex)
--- Function to move current buffer to a new horizontal split
-function MoveToHSplit()
-  local oldbuf = vim.fn.bufnr('%')
-  vim.cmd('split')
-  vim.cmd('b' .. oldbuf)
-  vim.cmd('wincmd p')
-  vim.cmd('b#')
-end
-
--- Function to move current buffer to a new vertical split
-function MoveToVSplit()
-  local oldbuf = vim.fn.bufnr('%')
-  vim.cmd('vsplit')
-  vim.cmd('b' .. oldbuf)
-  vim.cmd('wincmd p')
-  vim.cmd('b#')
-end
-
--- Key mapping for moving buffer to horizontal split
-vim.api.nvim_set_keymap('n', '<leader>mh', ':lua MoveToHSplit()<CR>', { noremap = true, silent = true })
-vim.api.nvim_set_keymap('n', '<leader>mv', ':lua MoveToVSplit()<CR>', { noremap = true, silent = true })
-vim.keymap.set('n', '<leader>ww', '<C-w>w')
-vim.keymap.set('n', '<leader>sv', ':source $MYVIMRC<CR>')
-vim.keymap.set('n', '<C-t>', ':NERDTreeToggle<CR>')
-vim.keymap.set('n', '<C-f>', ':NERDTreeFind<CR>')
-vim.keymap.set('n', '<C-n>', ':NERDTree<CR>')
-vim.keymap.set('n', '<leader>n', ':NERDTreeFocus<CR>')
-
+vim.g.netrw_liststyle = 3
+vim.g.netrw_hide = 0
 
 -- [[ Install `lazy.nvim` plugin manager ]]
 --    https://github.com/folke/lazy.nvim
@@ -71,11 +38,11 @@ require('lazy').setup({
   -- Git related plugins
   'tpope/vim-fugitive',
   'tpope/vim-rhubarb',
-  'preservim/nerdtree',
+  --'preservim/nerdtree',
 
   -- Detect tabstop and shiftwidth automatically
   'tpope/vim-sleuth',
-
+  require('plugins/oil'),
   -- NOTE: This is where your plugins related to LSP can be installed.
   --  The configuration is done below. Search for lspconfig to find it below.
   {
