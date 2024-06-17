@@ -1,3 +1,5 @@
+require('plugins.colemak-keymaps')
+
 -- Navigation
 vim.keymap.set('n', '<C-u>', "<C-u>zz")
 vim.keymap.set('n', '<C-d>', "<C-d>zz")
@@ -51,4 +53,3 @@ end
 -- Key mapping for moving buffer to horizontal split
 vim.api.nvim_set_keymap('n', '<leader>mh', ':lua MoveToHSplit()<CR>', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', '<leader>mv', ':lua MoveToVSplit()<CR>', { noremap = true, silent = true })
-
