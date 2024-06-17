@@ -15,8 +15,8 @@ vim.g.have_nerd_font = true
 vim.opt.swapfile = false
 
 require('plugins/keymaps')
-require('plugins/qwerty-keymaps')
--- require('plugins.colemak-keymaps')
+--require('plugins/qwerty-keymaps')
+require('plugins.colemak-keymaps')
 
 vim.g.netrw_liststyle = 3
 vim.g.netrw_hide = 0
