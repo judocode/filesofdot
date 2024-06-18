@@ -43,6 +43,9 @@ require('lazy').setup({
   -- Detect tabstop and shiftwidth automatically
   'tpope/vim-sleuth',
   require('plugins/oil'),
+  {
+    'mg979/vim-visual-multi'
+  },
   -- NOTE: This is where your plugins related to LSP can be installed.
   --  The configuration is done below. Search for lspconfig to find it below.
   {
@@ -126,6 +129,9 @@ require('lazy').setup({
     config = function()
       vim.o.background = 'light'
       vim.cmd.colorscheme 'vscode'
+      -- Customize the MatchParen highlight group
+      vim.cmd [[highlight MatchParen guibg=#E5EBF1 guifg=black]]
+
     end,
   },
 
@@ -587,7 +593,6 @@ cmp.setup {
     { name = 'luasnip' },
   },
 }
-vim.o.termguicolors = true
 
 -- The line beneath this is called `modeline`. See `:help modeline`
 -- vim: ts=2 sts=2 sw=2 et

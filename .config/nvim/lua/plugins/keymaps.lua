@@ -8,6 +8,8 @@ vim.keymap.set('n','N', "Nzzzv")
 vim.keymap.set('x', '<leader>p', '"_dP')
 vim.keymap.set('n', '<leader>pv', vim.cmd.Ex)
 vim.keymap.set('n', '<leader>ww', '<C-w>w')
+vim.keymap.set('n', '<C-s>', '<Esc>:w<CR>')
+vim.keymap.set('v', '<C-s>', '<Esc>:w<CR>')
 
 -- Function to move current buffer to a new horizontal split
 function MoveToHSplit()
