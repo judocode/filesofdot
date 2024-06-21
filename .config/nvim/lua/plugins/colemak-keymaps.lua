@@ -11,3 +11,13 @@ vim.keymap.set('v', 'N', ":m '>+1<CR>gv=gv")
 vim.keymap.set('v', 'E', ":m '<-2<CR>gv=gv")
 vim.keymap.set('n', 'j', "nzzzv")
 vim.keymap.set('n', 'J', "Nzzzv")
+
+vim.keymap.set('n', 'm', 'h')
+vim.keymap.set('n', 'h', 'm')
+vim.keymap.set('v', 'm', 'h')
+vim.keymap.set('v', 'h', 'm')
+
+vim.keymap.set('n', 'i', 'l')
+vim.keymap.set('n', 'l', 'i')
+vim.keymap.set('v', 'i', 'l')
+vim.keymap.set('v', 'l', 'i')
