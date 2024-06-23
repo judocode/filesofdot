@@ -46,6 +46,9 @@ require('lazy').setup({
   {
     'mg979/vim-visual-multi'
   },
+  {
+    'github/copilot.vim'
+  },
   -- NOTE: This is where your plugins related to LSP can be installed.
   --  The configuration is done below. Search for lspconfig to find it below.
   {
@@ -197,6 +200,38 @@ require('lazy').setup({
       'nvim-treesitter/nvim-treesitter-textobjects',
     },
     build = ':TSUpdate',
+  },
+  {
+    "nvim-treesitter/nvim-treesitter",
+    build = ":TSUpdate",
+  },
+  {
+    "nvim-treesitter/nvim-treesitter-context",
+    config = function()
+      require'treesitter-context'.setup{
+        enable = true, -- Enable this plugin (Can be enabled/disabled later via commands)
+        throttle = true, -- Throttles plugin updates (may improve performance)
+        max_lines = 0, -- How many lines the window should span. Values <= 0 mean no limit.
+        patterns = { -- Match patterns for TS nodes. These get wrapped to match at word boundaries.
+          default = {
+            'class',
+            'function',
+            'method',
+            -- If you want to add more patterns to the list, do so here
+            -- Note that these key names are the ones seen in `:help nvim-treesitter-query`
+          },
+        },
+      }
+    end,
+    requires = "nvim-treesitter/nvim-treesitter"
+  },
+  {
+    'rmagatti/auto-session',
+    config = function()
+      require("auto-session").setup {
+        auto_session_allowed_dirs = { "~/Web/" },
+      }
+    end,
   },
 
   -- NOTE: Next Step on Your Neovim Journey: Add/Configure additional "plugins" for kickstart
@@ -486,11 +521,12 @@ local on_attach = function(client, bufnr)
 
   if client.server_capabilities.documentFormattingProvider then
     local group = vim.api.nvim_create_augroup("LspFormatting", { clear = true })
-    vim.api.nvim_create_autocmd("BufWritePre", {
+    vim.api.nvim_create_autocmd("BufWritePost", {
       group = group,
       buffer = bufnr,
       callback = function()
         vim.lsp.buf.format({ bufnr = bufnr, async = true })
+        -- vim.cmd('write')
       end,
     })
   end
