@@ -6,3 +6,8 @@ vim.keymap.set('v', 'n', 'j')
 vim.keymap.set('v', 'j', 'n')
 vim.keymap.set('v', 'k', 'e')
 vim.keymap.set('v', 'e', 'k')
+
+vim.keymap.set('v', 'N', ":m '>+1<CR>gv=gv")
+vim.keymap.set('v', 'E', ":m '<-2<CR>gv=gv")
+vim.keymap.set('n', 'j', "nzzzv")
+vim.keymap.set('n', 'J', "Nzzzv")

@@ -7,6 +7,7 @@ vim.opt.expandtab = true -- Convert tabs to spaces
 vim.opt.shiftwidth = 2   -- Use 2 spaces for each step of (auto)indent
 
 require('plugins/keymaps')
+require('plugins/qwerty-keymaps')
 -- require('plugins.colemak-keymaps')
 
 vim.g.netrw_liststyle = 3
