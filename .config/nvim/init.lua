@@ -3,6 +3,8 @@
 --  NOTE: Must happen before plugins are required (otherwise wrong leader will be used)
 vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
+vim.opt.expandtab = true -- Convert tabs to spaces
+vim.opt.shiftwidth = 2   -- Use 2 spaces for each step of (auto)indent
 
 require('plugins/keymaps')
 -- require('plugins.colemak-keymaps')
@@ -366,7 +368,7 @@ local function live_grep_git_root()
   local git_root = find_git_root()
   if git_root then
     require('telescope.builtin').live_grep({
-      search_dirs = {git_root},
+      search_dirs = { git_root },
     })
   end
 end
@@ -513,6 +515,9 @@ local on_attach = function(client, bufnr)
   nmap('<leader>wl', function()
     print(vim.inspect(vim.lsp.buf.list_workspace_folders()))
   end, '[W]orkspace [L]ist Folders')
+
+  vim.api.nvim_buf_set_option(bufnr, 'expandtab', true)
+  vim.api.nvim_buf_set_option(bufnr, 'shiftwidth', 2)
 
   -- Create a command `:Format` local to the LSP buffer
   vim.api.nvim_buf_create_user_command(bufnr, 'Format', function(_)
