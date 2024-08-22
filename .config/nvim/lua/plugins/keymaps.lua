@@ -8,6 +8,7 @@ vim.keymap.set('n', '<C-s>', '<Esc>:w<CR>')
 vim.keymap.set('v', '<C-s>', '<Esc>:w<CR>')
 
 vim.keymap.set('n', '<leader>cr', ':let @+ = expand("%")<CR>', { noremap = true, silent = true, desc = '[C]opy [r]elative file name'})
+vim.keymap.set('n', '<leader>j', ':execute "!pnpm -F " . split(expand("%"), "/")[1] . " test " . expand("%")<CR>', { noremap = true, silent = true, desc = '[J]est test'})
 
 -- Function to move current buffer to a new horizontal split
 function MoveToHSplit()
