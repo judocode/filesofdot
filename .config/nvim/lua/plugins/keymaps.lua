@@ -7,6 +7,8 @@ vim.keymap.set('n', '<leader>ww', '<C-w>w')
 vim.keymap.set('n', '<C-s>', '<Esc>:w<CR>')
 vim.keymap.set('v', '<C-s>', '<Esc>:w<CR>')
 
+vim.keymap.set('n', '<leader>cr', ':let @+ = expand("%")<CR>', { noremap = true, silent = true, desc = '[C]opy [r]elative file name'})
+
 -- Function to move current buffer to a new horizontal split
 function MoveToHSplit()
   -- Get the current buffer number
