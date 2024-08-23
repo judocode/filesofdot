@@ -61,7 +61,38 @@ function MoveToVSplit()
   vim.api.nvim_win_set_buf(0, current_buf)
 end
 
+-- Function to move current buffer to the left
+function MoveToLeft()
+  local current_buf = vim.api.nvim_get_current_buf()
+
+  -- Get the previous buffer number
+  local previous_buf = vim.fn.bufnr('#')
+
+  -- Get the total number of windows
+  local total_windows = vim.fn.winnr('$')
+  local current_win_num = vim.fn.winnr()
+
+  -- Cannot move left if already the leftmost
+  if curren_win_num == 0 then
+    return
+  end
+
+  if previous_buf ~= -1 then
+    -- Move the previous buffer to the new window
+    vim.api.nvim_win_set_buf(0, previous_buf)
+  end
+
+  -- Move to the right window
+  vim.cmd('wincmd h')
+
+  -- Set the current buffer in the original window
+  vim.api.nvim_win_set_buf(0, current_buf)
+end
+
 -- Key mapping for moving buffer to horizontal split
-vim.api.nvim_set_keymap('n', '<leader>mh', ':lua MoveToHSplit()<CR>', { noremap = true, silent = true })
-vim.api.nvim_set_keymap('n', '<leader>mv', ':lua MoveToVSplit()<CR>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<leader>mh', ':lua MoveToHSplit()<CR>', { noremap = true, silent = true, desc = '[M]ove [H]orizontal' })
+vim.api.nvim_set_keymap('n', '<leader>mv', ':lua MoveToVSplit()<CR>', { noremap = true, silent = true, desc = '[M]ove [V]ertical' })
+
+vim.api.nvim_set_keymap('n', '<leader>ml', ':lua MoveToLeft()<CR>', { noremap = true, silent = true, desc = '[M]ove [L]eft' })
+vim.api.nvim_set_keymap('n', '<leader>mr', ':lua MoveToVSplit()<CR>', { noremap = true, silent = true, desc = '[M]ove [R]ight' })
 
