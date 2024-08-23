@@ -641,5 +641,11 @@ cmp.setup {
   },
 }
 
+local local_config = vim.fn.expand('~/.config/nvim/init_local.lua')
+
+if vim.fn.filereadable(local_config) == 1 then
+  dofile(local_config)
+end
+
 -- The line beneath this is called `modeline`. See `:help modeline`
 -- vim: ts=2 sts=2 sw=2 et
