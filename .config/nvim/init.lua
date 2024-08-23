@@ -153,7 +153,7 @@ require('lazy').setup({
         section_separators = '',
       },
       sections = {
-        lualine_a = {},
+        lualine_a = {'mode'},
         lualine_b = {
           {
             'filename',
