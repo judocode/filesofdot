@@ -49,8 +49,10 @@ function MoveToVSplit()
     vim.cmd('vsplit')
   end
 
-  -- Move the previous buffer to the new window
-  vim.api.nvim_win_set_buf(0, previous_buf)
+  if previous_buf ~= -1 then
+    -- Move the previous buffer to the new window
+    vim.api.nvim_win_set_buf(0, previous_buf)
+  end
 
   -- Move to the right window
   vim.cmd('wincmd l')
