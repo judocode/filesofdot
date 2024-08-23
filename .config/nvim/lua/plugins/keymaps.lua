@@ -38,14 +38,22 @@ function MoveToVSplit()
   -- Get the previous buffer number
   local previous_buf = vim.fn.bufnr('#')
 
-  -- Create a new vertical split
-  vim.cmd('vsplit')
+  -- Get the total number of windows
+  local total_windows = vim.fn.winnr('$')
+  local current_win_num = vim.fn.winnr()
+
+  -- Determine if the current window is the rightmost one
+  local is_rightmost = (current_win_num == total_windows)
+
+  if is_rightmost then
+    vim.cmd('vsplit')
+  end
 
   -- Move the previous buffer to the new window
   vim.api.nvim_win_set_buf(0, previous_buf)
 
-  -- Switch back to the original window
-  vim.cmd('wincmd p')
+  -- Move to the right window
+  vim.cmd('wincmd l')
 
   -- Set the current buffer in the original window
   vim.api.nvim_win_set_buf(0, current_buf)
