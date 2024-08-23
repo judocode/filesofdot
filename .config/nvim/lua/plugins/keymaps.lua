@@ -95,4 +95,3 @@ vim.api.nvim_set_keymap('n', '<leader>mv', ':lua MoveToVSplit()<CR>', { noremap 
 
 vim.api.nvim_set_keymap('n', '<leader>ml', ':lua MoveToLeft()<CR>', { noremap = true, silent = true, desc = '[M]ove [L]eft' })
 vim.api.nvim_set_keymap('n', '<leader>mr', ':lua MoveToVSplit()<CR>', { noremap = true, silent = true, desc = '[M]ove [R]ight' })
-
