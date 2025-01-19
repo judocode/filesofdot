@@ -5,7 +5,7 @@ vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
 vim.opt.expandtab = true -- Convert tabs to spaces
 vim.opt.shiftwidth = 2   -- Use 2 spaces for each step of (auto)indent
-vim.opt.editorconfig_enable = false
+vim.g.editorconfig = false
 
 require('plugins/keymaps')
 require('plugins/qwerty-keymaps')
