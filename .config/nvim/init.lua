@@ -483,8 +483,10 @@ vim.keymap.set('n', '<leader>bd', ':bp | bd #<CR>')
 vim.keymap.set('n', '<leader>fb', builtin.buffers, {})
 vim.keymap.set('n', '<leader>tn', ':tabnext<CR>', {})
 vim.keymap.set('n', '<leader>tp', ':tabprevious<CR>', {})
-
-
+vim.keymap.set('n', '<up>', ":move -2<CR>==", { desc = 'Move line up' })
+vim.keymap.set('n', '<down>', ":move +1<CR>==", { desc = 'Move line down' })
+vim.keymap.set('v', '<up>', ":m '<-2<CR>gv=gv", { desc = 'Move line up' })
+vim.keymap.set('v', '<down>', ":m '>+1<CR>gv=gv", { desc = 'Move line down' })
 
 -- [[ Configure Treesitter ]]
 -- See `:help nvim-treesitter`
