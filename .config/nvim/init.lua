@@ -6,6 +6,8 @@ vim.g.maplocalleader = ' '
 vim.opt.expandtab = true -- Convert tabs to spaces
 vim.opt.shiftwidth = 2   -- Use 2 spaces for each step of (auto)indent
 vim.g.editorconfig = false
+vim.o.sessionoptions = "blank,buffers,curdir,folds,help,tabpages,winsize,winpos,terminal,localoptions"
+vim.g.have_nerd_font = true
 
 require('plugins/keymaps')
 require('plugins/qwerty-keymaps')
@@ -29,6 +31,16 @@ if not vim.loop.fs_stat(lazypath) then
   }
 end
 vim.opt.rtp:prepend(lazypath)
+
+vim.api.nvim_create_autocmd('VimLeave', {
+  callback = function()
+    -- If oil is open and we save the session
+    -- it will screw up the restore
+    if vim.bo.filetype ~= 'oil' then
+      vim.cmd("SessionSave")
+    end
+  end,
+})
 
 -- [[ Configure plugins ]]
 -- NOTE: Here is where you install your plugins.
@@ -90,7 +102,62 @@ require('lazy').setup({
   },
 
   -- Useful plugin to show you pending keybinds.
-  { 'folke/which-key.nvim',  opts = {} },
+  {                     -- Useful plugin to show you pending keybinds.
+    'folke/which-key.nvim',
+    event = 'VimEnter', -- Sets the loading event to 'VimEnter'
+    opts = {
+      -- delay between pressing a key and opening which-key (milliseconds)
+      -- this setting is independent of vim.opt.timeoutlen
+      delay = 0,
+      icons = {
+        -- set icon mappings to true if you have a Nerd Font
+        mappings = vim.g.have_nerd_font,
+        -- If you are using a Nerd Font: set icons.keys to an empty table which will use the
+        -- default which-key.nvim defined Nerd Font icons, otherwise define a string table
+        keys = vim.g.have_nerd_font and {} or {
+          Up = '<Up> ',
+          Down = '<Down> ',
+          Left = '<Left> ',
+          Right = '<Right> ',
+          C = '<C-…> ',
+          M = '<M-…> ',
+          D = '<D-…> ',
+          S = '<S-…> ',
+          CR = '<CR> ',
+          Esc = '<Esc> ',
+          ScrollWheelDown = '<ScrollWheelDown> ',
+          ScrollWheelUp = '<ScrollWheelUp> ',
+          NL = '<NL> ',
+          BS = '<BS> ',
+          Space = '<Space> ',
+          Tab = '<Tab> ',
+          F1 = '<F1>',
+          F2 = '<F2>',
+          F3 = '<F3>',
+          F4 = '<F4>',
+          F5 = '<F5>',
+          F6 = '<F6>',
+          F7 = '<F7>',
+          F8 = '<F8>',
+          F9 = '<F9>',
+          F10 = '<F10>',
+          F11 = '<F11>',
+          F12 = '<F12>',
+        },
+      },
+
+      -- Document existing key chains
+      spec = {
+        { '<leader>c', group = '[C]ode',     mode = { 'n', 'x' } },
+        { '<leader>d', group = '[D]ocument' },
+        { '<leader>r', group = '[R]ename' },
+        { '<leader>s', group = '[S]earch' },
+        { '<leader>w', group = '[W]orkspace' },
+        { '<leader>t', group = '[T]oggle' },
+        { '<leader>h', group = 'Git [H]unk', mode = { 'n', 'v' } },
+      },
+    },
+  },
   {
     -- Adds git related signs to the gutter, as well as utilities for managing changes
     'lewis6991/gitsigns.nvim',
@@ -211,10 +278,6 @@ require('lazy').setup({
     build = ':TSUpdate',
   },
   {
-    "nvim-treesitter/nvim-treesitter",
-    build = ":TSUpdate",
-  },
-  {
     "nvim-treesitter/nvim-treesitter-context",
     config = function()
       require 'treesitter-context'.setup {
@@ -238,12 +301,7 @@ require('lazy').setup({
     'rmagatti/auto-session',
     config = function()
       require("auto-session").setup {
-        auto_session_enable_last_session = true,
-        auto_session_root_dir = vim.fn.stdpath('data') .. "/sessions/",
-        auto_session_enabled = true,
-        auto_save_enabled = true,
-        auto_restore_enabled = true,
-        auto_session_suppress_dirs = nil
+        allowed_dirs = { "~/Web" }
       }
     end,
   },
@@ -400,7 +458,20 @@ vim.keymap.set('n', '<leader>gf', builtin.git_files, { desc = 'Search [G]it [F]i
 vim.keymap.set('n', '<leader>sf', builtin.find_files, { desc = '[S]earch [F]iles' })
 vim.keymap.set('n', '<leader>sh', require('telescope.builtin').help_tags, { desc = '[S]earch [H]elp' })
 vim.keymap.set('n', '<leader>sw', require('telescope.builtin').grep_string, { desc = '[S]earch current [W]ord' })
-vim.keymap.set('n', '<leader>sg', require('telescope.builtin').live_grep, { desc = '[S]earch by [G]rep' })
+vim.keymap.set('n', '<leader>sg', builtin.live_grep, { desc = '[S]earch by [G]rep' })
+vim.keymap.set('n', '<leader>se', function()
+  builtin.live_grep({
+    additional_args = function()
+      return { "--case-sensitive", "--word-regexp" }
+    end
+  })
+end, { desc = '[S]earch [E]xact grep' })
+vim.keymap.set('n', '<leader>sc', function()
+  builtin.live_grep({ additional_args = { "--case-sensitive" } })
+end, { desc = '[S]earch Matching [C]ase grep' })
+vim.keymap.set('n', '<leader>sW', function()
+  builtin.live_grep({ additional_args = { "--word-regexp" } })
+end, { desc = '[S]earch [W]hole Word grep' })
 vim.keymap.set('n', '<leader>sG', ':LiveGrepGitRoot<cr>', { desc = '[S]earch by [G]rep on Git Root' })
 vim.keymap.set('n', '<leader>sd', require('telescope.builtin').diagnostics, { desc = '[S]earch [D]iagnostics' })
 vim.keymap.set('n', '<leader>sr', require('telescope.builtin').resume, { desc = '[S]earch [R]esume' })
@@ -544,17 +615,6 @@ local on_attach = function(client, bufnr)
     })
   end
 end
-
--- document existing key chains
-require('which-key').register {
-  ['<leader>c'] = { name = '[C]ode', _ = 'which_key_ignore' },
-  ['<leader>d'] = { name = '[D]ocument', _ = 'which_key_ignore' },
-  ['<leader>g'] = { name = '[G]it', _ = 'which_key_ignore' },
-  ['<leader>h'] = { name = 'More git', _ = 'which_key_ignore' },
-  ['<leader>r'] = { name = '[R]ename', _ = 'which_key_ignore' },
-  ['<leader>s'] = { name = '[S]earch', _ = 'which_key_ignore' },
-  ['<leader>w'] = { name = '[W]orkspace', _ = 'which_key_ignore' },
-}
 
 -- mason-lspconfig requires that these setup functions are called in this order
 -- before setting up the servers.
