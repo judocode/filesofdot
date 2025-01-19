@@ -5,6 +5,7 @@ vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
 vim.opt.expandtab = true -- Convert tabs to spaces
 vim.opt.shiftwidth = 2   -- Use 2 spaces for each step of (auto)indent
+vim.opt.editorconfig_enable = false
 
 require('plugins/keymaps')
 require('plugins/qwerty-keymaps')
@@ -49,9 +50,10 @@ require('lazy').setup({
   {
     'mg979/vim-visual-multi'
   },
-  {
-    'github/copilot.vim'
-  },
+  -- Copilot won't stop warning if it is not enabled
+  -- {
+  --   'github/copilot.vim'
+  -- },
   -- NOTE: This is where your plugins related to LSP can be installed.
   --  The configuration is done below. Search for lspconfig to find it below.
   {
@@ -88,7 +90,7 @@ require('lazy').setup({
   },
 
   -- Useful plugin to show you pending keybinds.
-  { 'folke/which-key.nvim', opts = {} },
+  { 'folke/which-key.nvim',  opts = {} },
   {
     -- Adds git related signs to the gutter, as well as utilities for managing changes
     'lewis6991/gitsigns.nvim',
@@ -137,7 +139,6 @@ require('lazy').setup({
       vim.cmd.colorscheme 'vscode'
       -- Customize the MatchParen highlight group
       vim.cmd [[highlight MatchParen guibg=#E5EBF1 guifg=black]]
-
     end,
   },
 
@@ -153,7 +154,7 @@ require('lazy').setup({
         section_separators = '',
       },
       sections = {
-        lualine_a = {'mode'},
+        lualine_a = { 'mode' },
         lualine_b = {
           {
             'filename',
@@ -216,11 +217,11 @@ require('lazy').setup({
   {
     "nvim-treesitter/nvim-treesitter-context",
     config = function()
-      require'treesitter-context'.setup{
-        enable = true, -- Enable this plugin (Can be enabled/disabled later via commands)
+      require 'treesitter-context'.setup {
+        enable = true,   -- Enable this plugin (Can be enabled/disabled later via commands)
         throttle = true, -- Throttles plugin updates (may improve performance)
-        max_lines = 0, -- How many lines the window should span. Values <= 0 mean no limit.
-        patterns = { -- Match patterns for TS nodes. These get wrapped to match at word boundaries.
+        max_lines = 0,   -- How many lines the window should span. Values <= 0 mean no limit.
+        patterns = {     -- Match patterns for TS nodes. These get wrapped to match at word boundaries.
           default = {
             'class',
             'function',
@@ -238,7 +239,7 @@ require('lazy').setup({
     config = function()
       require("auto-session").setup {
         auto_session_enable_last_session = true,
-        auto_session_root_dir = vim.fn.stdpath('data').."/sessions/",
+        auto_session_root_dir = vim.fn.stdpath('data') .. "/sessions/",
         auto_session_enabled = true,
         auto_save_enabled = true,
         auto_restore_enabled = true,
@@ -279,7 +280,7 @@ vim.o.mouse = 'a'
 -- Sync clipboard between OS and Neovim.
 --  Remove this option if you want your OS clipboard to remain independent.
 --  See `:help 'clipboard'`
-vim.o.clipboard = 'unnamedplus'
+-- vim.o.clipboard = 'unnamedplus'
 
 -- Enable break indent
 vim.o.breakindent = true
@@ -395,8 +396,8 @@ end, { desc = '[/] Fuzzily search in current buffer' })
 
 local builtin = require('telescope.builtin')
 
-vim.keymap.set('n', '<leader>gf', require('telescope.builtin').git_files, { desc = 'Search [G]it [F]iles' })
-vim.keymap.set('n', '<leader>sf', require('telescope.builtin').find_files, { desc = '[S]earch [F]iles' })
+vim.keymap.set('n', '<leader>gf', builtin.git_files, { desc = 'Search [G]it [F]iles' })
+vim.keymap.set('n', '<leader>sf', builtin.find_files, { desc = '[S]earch [F]iles' })
 vim.keymap.set('n', '<leader>sh', require('telescope.builtin').help_tags, { desc = '[S]earch [H]elp' })
 vim.keymap.set('n', '<leader>sw', require('telescope.builtin').grep_string, { desc = '[S]earch current [W]ord' })
 vim.keymap.set('n', '<leader>sg', require('telescope.builtin').live_grep, { desc = '[S]earch by [G]rep' })
