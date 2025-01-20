@@ -5,7 +5,6 @@ vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
 vim.opt.expandtab = true -- Convert tabs to spaces
 vim.opt.shiftwidth = 2   -- Use 2 spaces for each step of (auto)indent
-vim.g.editorconfig = false
 vim.o.sessionoptions = "blank,buffers,curdir,folds,help,tabpages,winsize,winpos,terminal,localoptions"
 vim.g.have_nerd_font = true
 
