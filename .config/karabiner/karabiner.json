@@ -281,6 +281,37 @@
                     ]
                   }
                 ],
+                "conditions": [
+                  {
+                    "type": "frontmost_application_unless",
+                    "bundle_identifiers": [
+                      "^com\\.apple\\.Terminal$",
+                      "^com\\.github\\.WezTerm",
+                      "^io\\.alacritty$",
+                      "^com\\.iterm2\\.iTerm2$",
+                      "^com\\.googlecode\\.iterm2$"
+                    ]
+                  }
+                ],
+                "type": "basic"
+              },
+              {
+                "from": {
+                  "key_code": "u",
+                  "modifiers": {
+                    "mandatory": [
+                      "control"
+                    ]
+                  }
+                },
+                "to": [
+                  {
+                    "key_code": "delete_or_backspace",
+                    "modifiers": [
+                      "left_command"
+                    ]
+                  }
+                ],
                 "type": "basic"
               }
             ]
@@ -576,6 +607,37 @@
                     "key_code": "delete_or_backspace",
                     "modifiers": [
                       "option"
+                    ]
+                  }
+                ],
+                "conditions": [
+                  {
+                    "type": "frontmost_application_unless",
+                    "bundle_identifiers": [
+                      "^com\\.apple\\.Terminal$",
+                      "^com\\.github\\.WezTerm",
+                      "^io\\.alacritty$",
+                      "^com\\.iterm2\\.iTerm2$",
+                      "^com\\.googlecode\\.iterm2$"
+                    ]
+                  }
+                ],
+                "type": "basic"
+              },
+              {
+                "from": {
+                  "key_code": "u",
+                  "modifiers": {
+                    "mandatory": [
+                      "control"
+                    ]
+                  }
+                },
+                "to": [
+                  {
+                    "key_code": "delete_or_backspace",
+                    "modifiers": [
+                      "left_command"
                     ]
                   }
                 ],
