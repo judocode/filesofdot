@@ -6,6 +6,8 @@ vim.keymap.set('x', '<leader>p', '"_dP')
 vim.keymap.set('n', '<leader>ww', '<C-w>w')
 vim.keymap.set('n', '<C-s>', '<Esc>:w<CR>')
 vim.keymap.set('v', '<C-s>', '<Esc>:w<CR>')
+vim.keymap.set('i', '<C-e>', '<C-o>A', { noremap = true, silent = true })
+vim.keymap.set('i', '<C-a>', '<C-o>I', { noremap = true, silent = true })
 
 vim.keymap.set('n', '<leader>cr', ':let @+ = expand("%")<CR>',
   { noremap = true, silent = true, desc = '[C]opy [r]elative file name' })
