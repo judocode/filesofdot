@@ -290,7 +290,7 @@
                       "^io\\.alacritty$",
                       "^com\\.iterm2\\.iTerm2$",
                       "^com\\.googlecode\\.iterm2$",
-                      "^dev\\.zed\\.Zed"
+                      "^dev\\.zed\\.Zed$"
                     ]
                   }
                 ],
@@ -620,7 +620,7 @@
                       "^io\\.alacritty$",
                       "^com\\.iterm2\\.iTerm2$",
                       "^com\\.googlecode\\.iterm2$",
-                      "^dev\\.zed\\.Zed"
+                      "^dev\\.zed\\.Zed$"
                     ]
                   }
                 ],
