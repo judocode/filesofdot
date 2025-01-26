@@ -289,7 +289,8 @@
                       "^com\\.github\\.WezTerm",
                       "^io\\.alacritty$",
                       "^com\\.iterm2\\.iTerm2$",
-                      "^com\\.googlecode\\.iterm2$"
+                      "^com\\.googlecode\\.iterm2$",
+                      "^dev\\.zed\\.Zed"
                     ]
                   }
                 ],
@@ -618,7 +619,8 @@
                       "^com\\.github\\.WezTerm",
                       "^io\\.alacritty$",
                       "^com\\.iterm2\\.iTerm2$",
-                      "^com\\.googlecode\\.iterm2$"
+                      "^com\\.googlecode\\.iterm2$",
+                      "^dev\\.zed\\.Zed"
                     ]
                   }
                 ],
