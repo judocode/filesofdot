@@ -5,8 +5,14 @@ vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
 vim.opt.expandtab = true -- Convert tabs to spaces
 vim.opt.shiftwidth = 2   -- Use 2 spaces for each step of (auto)indent
+
+-- allows saving sessions
 vim.o.sessionoptions = "blank,buffers,curdir,folds,help,tabpages,winsize,winpos,terminal,localoptions"
+
 vim.g.have_nerd_font = true
+
+-- Disable swapfiles
+vim.opt.swapfile = false
 
 require('plugins/keymaps')
 require('plugins/qwerty-keymaps')
