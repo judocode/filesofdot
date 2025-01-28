@@ -109,7 +109,7 @@ require('lazy').setup({
       {
         '<leader>fb',
         function()
-          require('conform').format { async = true, lsp_format = 'fallback' }
+          require('conform').format { async = true, lsp_format = 'first' }
         end,
         mode = '',
         desc = '[F]ormat [B]uffer',
@@ -126,7 +126,7 @@ require('lazy').setup({
         if disable_filetypes[vim.bo[bufnr].filetype] then
           lsp_format_opt = 'never'
         else
-          lsp_format_opt = 'fallback'
+          lsp_format_opt = 'first'
         end
         return {
           timeout_ms = 500,
@@ -139,6 +139,7 @@ require('lazy').setup({
         -- python = { "isort", "black" },
         --
         -- You can use 'stop_after_first' to run the first available formatter from the list
+        css = { "prettierd", "prettier", stop_after_first = true, lsp_format = 'first' },
         javascript = { "prettierd", "prettier", stop_after_first = true, lsp_format = 'first' },
         typescriptreact = { "prettier", stop_after_first = true, lsp_format = 'first' },
         typescript = { "prettierd", "prettierd", "prettier", stop_after_first = true, lsp_format = 'first' },
