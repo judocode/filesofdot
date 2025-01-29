@@ -228,7 +228,7 @@
             "manipulators": [
               {
                 "from": {
-                  "key_code": "z",
+                  "key_code": "comma",
                   "modifiers": {
                     "mandatory": [
                       "control"
@@ -247,7 +247,7 @@
               },
               {
                 "from": {
-                  "key_code": "m",
+                  "key_code": "semicolon",
                   "modifiers": {
                     "mandatory": [
                       "control"
@@ -260,6 +260,22 @@
                     "modifiers": [
                       "option"
                     ]
+                  }
+                ],
+                "type": "basic"
+              },
+              {
+                "from": {
+                  "key_code": "m",
+                  "modifiers": {
+                    "mandatory": [
+                      "control"
+                    ]
+                  }
+                },
+                "to": [
+                  {
+                    "key_code": "return_or_enter"
                   }
                 ],
                 "type": "basic"
@@ -310,6 +326,42 @@
                     "key_code": "delete_or_backspace",
                     "modifiers": [
                       "left_command"
+                    ]
+                  }
+                ],
+                "type": "basic"
+              },
+              {
+                "from": {
+                  "key_code": "i",
+                  "modifiers": {
+                    "mandatory": [
+                      "control"
+                    ]
+                  }
+                },
+                "to": [
+                  {
+                    "key_code": "tab"
+                  }
+                ],
+                "type": "basic"
+              },
+              {
+                "from": {
+                  "key_code": "i",
+                  "modifiers": {
+                    "mandatory": [
+                      "control",
+                      "shift"
+                    ]
+                  }
+                },
+                "to": [
+                  {
+                    "key_code": "tab",
+                    "modifiers": [
+                      "shift"
                     ]
                   }
                 ],
@@ -558,7 +610,7 @@
             "manipulators": [
               {
                 "from": {
-                  "key_code": "z",
+                  "key_code": "comma",
                   "modifiers": {
                     "mandatory": [
                       "control"
@@ -577,7 +629,7 @@
               },
               {
                 "from": {
-                  "key_code": "m",
+                  "key_code": "semicolon",
                   "modifiers": {
                     "mandatory": [
                       "control"
@@ -590,6 +642,22 @@
                     "modifiers": [
                       "option"
                     ]
+                  }
+                ],
+                "type": "basic"
+              },
+              {
+                "from": {
+                  "key_code": "m",
+                  "modifiers": {
+                    "mandatory": [
+                      "control"
+                    ]
+                  }
+                },
+                "to": [
+                  {
+                    "key_code": "return_or_enter"
                   }
                 ],
                 "type": "basic"
@@ -640,6 +708,42 @@
                     "key_code": "delete_or_backspace",
                     "modifiers": [
                       "left_command"
+                    ]
+                  }
+                ],
+                "type": "basic"
+              },
+              {
+                "from": {
+                  "key_code": "i",
+                  "modifiers": {
+                    "mandatory": [
+                      "control"
+                    ]
+                  }
+                },
+                "to": [
+                  {
+                    "key_code": "tab"
+                  }
+                ],
+                "type": "basic"
+              },
+              {
+                "from": {
+                  "key_code": "i",
+                  "modifiers": {
+                    "mandatory": [
+                      "control",
+                      "shift"
+                    ]
+                  }
+                },
+                "to": [
+                  {
+                    "key_code": "tab",
+                    "modifiers": [
+                      "shift"
                     ]
                   }
                 ],

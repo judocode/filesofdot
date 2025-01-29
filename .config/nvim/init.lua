@@ -265,6 +265,7 @@ require('lazy').setup({
     config = function()
       vim.o.background = 'light'
       vim.cmd.colorscheme 'vscode'
+
       -- Customize the MatchParen highlight group
       vim.cmd [[highlight MatchParen guibg=#E5EBF1 guifg=black]]
     end,
