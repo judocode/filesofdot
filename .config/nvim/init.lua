@@ -528,16 +528,24 @@ vim.keymap.set('n', '<leader>sw', builtin.grep_string, { desc = '[S]earch curren
 vim.keymap.set('n', '<leader>sg', builtin.live_grep, { desc = '[S]earch by [G]rep' })
 vim.keymap.set('n', '<leader>se', function()
   builtin.live_grep({
-    additional_args = function()
-      return { "--case-sensitive", "--word-regexp" }
+    additional_args = function(args)
+      return vim.tbl_extend("force", args, { "--case-sensitive", "--word-regexp" })
     end
   })
 end, { desc = '[S]earch [E]xact grep' })
 vim.keymap.set('n', '<leader>sc', function()
-  builtin.live_grep({ additional_args = { "--case-sensitive" } })
+  builtin.live_grep({
+    additional_args = function(args)
+      return vim.tbl_extend("force", args, { "--case-sensitive" })
+    end
+  })
 end, { desc = '[S]earch Matching [C]ase grep' })
 vim.keymap.set('n', '<leader>sW', function()
-  builtin.live_grep({ additional_args = { "--word-regexp" } })
+  builtin.live_grep({
+    additional_args = function(args)
+      return vim.tbl_extend("force", args, { "--word-regexp" })
+    end
+  })
 end, { desc = '[S]earch [W]hole Word grep' })
 vim.keymap.set('n', '<leader>sG', ':LiveGrepGitRoot<cr>', { desc = '[S]earch by [G]rep on Git Root' })
 vim.keymap.set('n', '<leader>sd', builtin.diagnostics, { desc = '[S]earch [D]iagnostics' })
