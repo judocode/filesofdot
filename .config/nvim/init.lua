@@ -65,9 +65,8 @@ require('lazy').setup({
   'tpope/vim-sleuth',
   'tpope/vim-surround',
   require('plugins/oil'),
-  {
-    'mg979/vim-visual-multi'
-  },
+  'almo7aya/openingh.nvim',
+  'mg979/vim-visual-multi',
   -- vim-surround seems better even though it's outdated
   -- {
   --   "kylechui/nvim-surround",
@@ -107,12 +106,12 @@ require('lazy').setup({
     cmd = { 'ConformInfo' },
     keys = {
       {
-        '<leader>fb',
+        '<leader>f',
         function()
           require('conform').format { async = true, lsp_format = 'first' }
         end,
         mode = '',
-        desc = '[F]ormat [B]uffer',
+        desc = '[F]ormat',
       },
     },
     opts = {
@@ -211,11 +210,12 @@ require('lazy').setup({
       spec = {
         { '<leader>c', group = '[C]ode',     mode = { 'n', 'x' } },
         { '<leader>d', group = '[D]ocument' },
+        { '<leader>g', group = '[G]it' },
+        { '<leader>m', group = '[M]ove' },
         { '<leader>r', group = '[R]ename' },
         { '<leader>s', group = '[S]earch' },
-        { '<leader>w', group = '[W]orkspace' },
         { '<leader>t', group = '[T]oggle' },
-        { '<leader>h', group = 'Git [H]unk', mode = { 'n', 'v' } },
+        { '<leader>w', group = '[W]orkspace' },
       },
     },
   },
@@ -232,7 +232,7 @@ require('lazy').setup({
         changedelete = { text = '~' },
       },
       on_attach = function(bufnr)
-        vim.keymap.set('n', '<leader>hp', require('gitsigns').preview_hunk, { buffer = bufnr, desc = 'Preview git hunk' })
+        vim.keymap.set('n', '<leader>gh', require('gitsigns').preview_hunk, { buffer = bufnr, desc = 'Preview git hunk' })
 
         -- don't override the built-in and fugitive keymaps
         local gs = package.loaded.gitsigns
@@ -550,18 +550,8 @@ end, { desc = '[S]earch [W]hole Word grep' })
 vim.keymap.set('n', '<leader>sG', ':LiveGrepGitRoot<cr>', { desc = '[S]earch by [G]rep on Git Root' })
 vim.keymap.set('n', '<leader>sd', builtin.diagnostics, { desc = '[S]earch [D]iagnostics' })
 vim.keymap.set('n', '<leader>sr', builtin.resume, { desc = '[S]earch [R]esume' })
---vim.keymap.set('n', 'h', 'm')
---vim.keymap.set('n', 'm', 'h')
---vim.keymap.set('n', 'l', 'i')
---vim.keymap.set('n', 'i', 'l')
-vim.keymap.set('n', '<leader>bd', ':bp | bd #<CR>')
-vim.keymap.set('n', '<leader>fb', builtin.buffers, {})
 vim.keymap.set('n', '<leader>tn', ':tabnext<CR>', {})
 vim.keymap.set('n', '<leader>tp', ':tabprevious<CR>', {})
-vim.keymap.set('n', '<up>', ":move -2<CR>==", { desc = 'Move line up' })
-vim.keymap.set('n', '<down>', ":move +1<CR>==", { desc = 'Move line down' })
-vim.keymap.set('v', '<up>', ":m '<-2<CR>gv=gv", { desc = 'Move line up' })
-vim.keymap.set('v', '<down>', ":m '>+1<CR>gv=gv", { desc = 'Move line down' })
 
 -- [[ Configure Treesitter ]]
 -- See `:help nvim-treesitter`

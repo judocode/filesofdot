@@ -10,10 +10,18 @@ vim.keymap.set('i', '<C-e>', '<C-o>A', { noremap = true, silent = true })
 vim.keymap.set('i', '<C-a>', '<C-o>I', { noremap = true, silent = true })
 vim.keymap.set("n", "<leader>wq", ":w | bd<CR>", { noremap = true, silent = true, desc = '[W]rite and [Q]uit buffer' })
 
+vim.keymap.set('n', '<leader>go', ':OpenInGHFile<CR>', { noremap = true, silent = true, desc = '[G]it [O]pen file' })
+vim.keymap.set('n', '<leader>ga', ':G add -p<CR>', { noremap = true, silent = true, desc = '[G]it [A]dd' })
+vim.keymap.set('n', '<leader>gp', ':G push<CR>', { noremap = true, silent = true, desc = '[G]it [P]ush' })
 vim.keymap.set('n', '<leader>cr', ':let @+ = expand("%")<CR>',
   { noremap = true, silent = true, desc = '[C]opy [r]elative file name' })
 vim.keymap.set('n', '<leader>j', ':execute "!pnpm -F " . split(expand("%"), "/")[1] . " test " . expand("%")<CR>',
   { noremap = true, silent = true, desc = '[J]est test' })
+
+vim.keymap.set('n', '<up>', ":move -2<CR>==", { desc = 'Move line up' })
+vim.keymap.set('n', '<down>', ":move +1<CR>==", { desc = 'Move line down' })
+vim.keymap.set('v', '<up>', ":m '<-2<CR>gv=gv", { desc = 'Move line up' })
+vim.keymap.set('v', '<down>', ":m '>+1<CR>gv=gv", { desc = 'Move line down' })
 
 -- Function to move current buffer to a new horizontal split
 function MoveToHSplit()
