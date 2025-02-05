@@ -781,6 +781,7 @@
                   "modifiers": {
                     "mandatory": [
                       "left_control",
+                      "shift",
                       "left_option",
                       "left_command"
                     ],
