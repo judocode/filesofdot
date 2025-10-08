@@ -1,0 +1,4 @@
+keybinding:
+  universal:
+    prevItem: '<c-p>'
+    nextItem: '<c-n>'
