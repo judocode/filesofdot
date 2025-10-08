@@ -579,11 +579,11 @@
             ]
           },
           {
-            "description": "Hyper+d to Cmd+[",
+            "description": "Hyper+n to Cmd+[",
             "manipulators": [
               {
                 "from": {
-                  "key_code": "d",
+                  "key_code": "n",
                   "modifiers": {
                     "mandatory": [
                       "left_control",
@@ -604,11 +604,11 @@
             ]
           },
           {
-            "description": "Hyper+f to Cmd+]",
+            "description": "Hyper+t to Cmd+]",
             "manipulators": [
               {
                 "from": {
-                  "key_code": "d",
+                  "key_code": "t",
                   "modifiers": {
                     "mandatory": [
                       "left_control",
