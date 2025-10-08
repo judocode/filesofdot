@@ -579,11 +579,61 @@
             ]
           },
           {
-            "description": "Hyper+n to open iTerm",
+            "description": "Hyper+d to Cmd+[",
             "manipulators": [
               {
                 "from": {
-                  "key_code": "n",
+                  "key_code": "d",
+                  "modifiers": {
+                    "mandatory": [
+                      "left_control",
+                      "shift",
+                      "left_option",
+                      "left_command"
+                    ]
+                  }
+                },
+                "to": [
+                  {
+                    "key_code": "open_bracket",
+                    "modifiers": ["left_command"]
+                  }
+                ],
+                "type": "basic"
+              }
+            ]
+          },
+          {
+            "description": "Hyper+f to Cmd+]",
+            "manipulators": [
+              {
+                "from": {
+                  "key_code": "d",
+                  "modifiers": {
+                    "mandatory": [
+                      "left_control",
+                      "shift",
+                      "left_option",
+                      "left_command"
+                    ]
+                  }
+                },
+                "to": [
+                  {
+                    "key_code": "close_bracket",
+                    "modifiers": ["left_command"]
+                  }
+                ],
+                "type": "basic"
+              }
+            ]
+          },
+          {
+            "description": "Hyper+h to open iTerm",
+            "manipulators": [
+              {
+                "from": {
+                  "key_code": "h",
                   "modifiers": {
                     "mandatory": [
                       "left_control",
@@ -621,11 +671,11 @@
             ]
           },
           {
-            "description": "Hyper+o to open App",
+            "description": "Hyper+a to open App",
             "manipulators": [
               {
                 "from": {
-                  "key_code": "o",
+                  "key_code": "a",
                   "modifiers": {
                     "mandatory": [
                       "left_control",
