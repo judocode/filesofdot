@@ -272,11 +272,11 @@
             ]
           },
           {
-            "description": "Hyper+h to open Postico",
+            "description": "Hyper+i to open Postico",
             "manipulators": [
               {
                 "from": {
-                  "key_code": "h",
+                  "key_code": "i",
                   "modifiers": {
                     "mandatory": [
                       "left_control",
@@ -734,11 +734,11 @@
             ]
           },
           {
-            "description": "Hyper+k to open Postico",
+            "description": "Hyper+o to open Postico",
             "manipulators": [
               {
                 "from": {
-                  "key_code": "k",
+                  "key_code": "o",
                   "modifiers": {
                     "mandatory": [
                       "left_control",
