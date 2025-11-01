@@ -255,7 +255,7 @@
             "manipulators": [
               {
                 "from": {
-                  "key_code": ";",
+                  "key_code": "semicolon",
                   "modifiers": {
                     "mandatory": [
                       "left_control",
@@ -287,7 +287,7 @@
                     "optional": ["caps_lock"]
                   }
                 },
-                "to": [{ "shell_command": "open -a 'Postico'" }],
+                "to": [{ "shell_command": "open -a 'Postico 2'" }],
                 "type": "basic"
               }
             ]
@@ -749,7 +749,7 @@
                     "optional": ["caps_lock"]
                   }
                 },
-                "to": [{ "shell_command": "open -a 'Postico'" }],
+                "to": [{ "shell_command": "open -a 'Postico 2'" }],
                 "type": "basic"
               }
             ]
