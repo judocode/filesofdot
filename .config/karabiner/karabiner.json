@@ -291,7 +291,7 @@
                 "type": "basic"
               }
             ]
-          }
+          },
           {
             "description": "Mapping ctrl",
             "manipulators": [
@@ -753,7 +753,7 @@
                 "type": "basic"
               }
             ]
-          }
+          },
           {
             "description": "Mapping ctrl",
             "manipulators": [
