@@ -108,7 +108,7 @@
                 },
                 "to": [
                   {
-                    "key_code": "f2",
+                    "key_code": "f2"
                   }
                 ],
                 "type": "basic"
@@ -132,7 +132,7 @@
                 },
                 "to": [
                   {
-                    "key_code": "f5",
+                    "key_code": "f5"
                   }
                 ],
                 "type": "basic"
@@ -156,7 +156,7 @@
                 },
                 "to": [
                   {
-                    "key_code": "f10",
+                    "key_code": "f10"
                   }
                 ],
                 "type": "basic"
@@ -180,7 +180,7 @@
                 },
                 "to": [
                   {
-                    "key_code": "f11",
+                    "key_code": "f11"
                   }
                 ],
                 "type": "basic"
@@ -204,7 +204,7 @@
                 },
                 "to": [
                   {
-                    "key_code": "f12",
+                    "key_code": "f12"
                   }
                 ],
                 "type": "basic"
@@ -719,7 +719,7 @@
                 },
                 "to": [
                   {
-                    "key_code": "f2",
+                    "key_code": "f2"
                   }
                 ],
                 "type": "basic"
@@ -743,7 +743,7 @@
                 },
                 "to": [
                   {
-                    "key_code": "f5",
+                    "key_code": "f5"
                   }
                 ],
                 "type": "basic"
@@ -767,7 +767,7 @@
                 },
                 "to": [
                   {
-                    "key_code": "f10",
+                    "key_code": "f10"
                   }
                 ],
                 "type": "basic"
@@ -791,7 +791,7 @@
                 },
                 "to": [
                   {
-                    "key_code": "f11",
+                    "key_code": "f11"
                   }
                 ],
                 "type": "basic"
@@ -815,7 +815,7 @@
                 },
                 "to": [
                   {
-                    "key_code": "f12",
+                    "key_code": "f12"
                   }
                 ],
                 "type": "basic"
