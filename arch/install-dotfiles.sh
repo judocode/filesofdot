@@ -23,12 +23,14 @@ stow() {
 }
 
 echo "delete old configs"
-mv -i -v ~/.config/nvim ~/.config/nvim.bak
+#mv -i -v ~/.config/nvim ~/.config/nvim.bak
 mv -i -v ~/.config/tmux ~/.config/tmux.bak
 # rm -rf ~/.config/nvim
 
 echo "stowing configs"
 
 stow tmux
-stow nvim
+#stow nvim
+
+ls -s -i -v "$REPO_PATH/.config/nvim/lua/plugins/overrides.lua" "$CONFIG_DIR/nvim/lua/plugins/overrides.lua"
 
