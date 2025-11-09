@@ -19,7 +19,7 @@ stow() {
   source_path="$REPO_PATH/.config/$1"
   config_path="$CONFIG_DIR/$1"
   echo "backing up $config_path"
-  if [ -d "$config_path"]; then
+  if [ -d "$config_path" ]; then
     mv -i -v "~/.config/$1" "~/.config/$1.bak"
   fi
 
@@ -33,5 +33,5 @@ stow tmux
 # nvim already has a whole folder and installation
 #stow nvim
 
-ls -s -i -v "$REPO_PATH/.config/nvim/lua/plugins/overrides.lua" "$CONFIG_DIR/nvim/lua/plugins/overrides.lua"
+ln -s -i -v "$REPO_PATH/.config/nvim/lua/plugins/overrides.lua" "$CONFIG_DIR/nvim/lua/plugins/overrides.lua"
 
