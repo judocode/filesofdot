@@ -1,6 +1,6 @@
 #!/bin/sh
 
-REPO_URL=https://github.com/judocode/filesofdot.git
+REPO_URL=git@github.com:judocode/filesofdot.git
 REPO_PATH=~/.dotfiles
 CONFIG_DIR=~/.config
 
@@ -24,6 +24,7 @@ stow() {
 
 echo "delete old configs"
 mv -i -v ~/.config/nvim ~/.config/nvim.bak
+mv -i -v ~/.config/tmux ~/.config/tmux.bak
 # rm -rf ~/.config/nvim
 
 echo "stowing configs"
