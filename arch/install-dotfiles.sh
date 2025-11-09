@@ -18,18 +18,19 @@ git pull
 stow() {
   source_path="$REPO_PATH/.config/$1"
   config_path="$CONFIG_DIR/$1"
+  echo "backing up $config_path"
+  if [ -d "$config_path"]; then
+    mv -i -v "~/.config/$1" "~/.config/$1.bak"
+  fi
+
   echo "stowing $source_path in $config_path"
   ln -s -i -v "$source_path" "$config_path"
 }
 
-echo "delete old configs"
-#mv -i -v ~/.config/nvim ~/.config/nvim.bak
-mv -i -v ~/.config/tmux ~/.config/tmux.bak
-# rm -rf ~/.config/nvim
-
 echo "stowing configs"
 
 stow tmux
+# nvim already has a whole folder and installation
 #stow nvim
 
 ls -s -i -v "$REPO_PATH/.config/nvim/lua/plugins/overrides.lua" "$CONFIG_DIR/nvim/lua/plugins/overrides.lua"
