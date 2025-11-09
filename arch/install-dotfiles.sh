@@ -19,7 +19,11 @@ stow() {
   source_path="$REPO_PATH/.config/$1"
   config_path="$CONFIG_DIR/$1"
   echo "backing up $config_path"
-  if [ -d "$config_path" ]; then
+  if [ -L "$config_path" ]; then
+    echo "Removing existing symlink"
+    rm "$config_path"
+  elif [ -d "$config_path" ]; then
+    echo "Existing dir found"
     mv -i -v "~/.config/$1" "~/.config/$1.bak"
   fi
 
