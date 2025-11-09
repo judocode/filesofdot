@@ -12,6 +12,7 @@ else
   git clone "$REPO_URL" "$REPO_PATH"
 fi
 
+current_dir="$(pwd)"
 cd "$REPO_PATH"
 git pull
 
@@ -43,3 +44,5 @@ else
   ln -s -i -v  "$CONFIG_DIR/nvim/lua/plugins/overrides.lua"
 fi
 
+# Return to directory we were previously at
+cd "$current_dir"
