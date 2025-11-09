@@ -36,6 +36,10 @@ echo "stowing configs"
 stow tmux
 # nvim already has a whole folder and installation
 #stow nvim
-
-ln -s -i -v "$REPO_PATH/.config/nvim/lua/plugins/overrides.lua" "$CONFIG_DIR/nvim/lua/plugins/overrides.lua"
+NVIM_OVERRIDES="$REPO_PATH/.config/nvim/lua/plugins/overrides.lua"
+if [ -L "$NVIM_OVERRIDES" ]; then
+  echo "nvim already exists"
+else
+  ln -s -i -v  "$CONFIG_DIR/nvim/lua/plugins/overrides.lua"
+fi
 
