@@ -92,6 +92,30 @@
             ]
           },
           {
+            "description": "Hyper+o to Notes",
+            "manipulators": [
+              {
+                "from": {
+                  "key_code": "o",
+                  "modifiers": {
+                    "mandatory": [
+                      "left_control",
+                      "shift",
+                      "left_option",
+                      "left_command"
+                    ]
+                  }
+                },
+                "to": [
+                  {
+                    "to": [{ "shell_command": "open -a 'Notes'" }],
+                  }
+                ],
+                "type": "basic"
+              }
+            ]
+          },
+          {
             "description": "Hyper+t to F2",
             "manipulators": [
               {
@@ -699,6 +723,30 @@
                     ]
                   }
                 ]
+              }
+            ]
+          },
+          {
+            "description": "Hyper+u to Notes",
+            "manipulators": [
+              {
+                "from": {
+                  "key_code": "u",
+                  "modifiers": {
+                    "mandatory": [
+                      "left_control",
+                      "shift",
+                      "left_option",
+                      "left_command"
+                    ]
+                  }
+                },
+                "to": [
+                  {
+                    "to": [{ "shell_command": "open -a 'Notes'" }],
+                  }
+                ],
+                "type": "basic"
               }
             ]
           },
