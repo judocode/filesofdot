@@ -108,7 +108,7 @@
                 },
                 "to": [
                   {
-                    "to": [{ "shell_command": "open -a 'Notes'" }],
+                    "to": [{ "shell_command": "open -a 'Notes'" }]
                   }
                 ],
                 "type": "basic"
@@ -743,7 +743,7 @@
                 },
                 "to": [
                   {
-                    "to": [{ "shell_command": "open -a 'Notes'" }],
+                    "to": [{ "shell_command": "open -a 'Notes'" }]
                   }
                 ],
                 "type": "basic"
