@@ -14,7 +14,7 @@ if yay -Q "$package" &>/dev/null; then
     echo "$package is installed."
 else
     echo "$package is not installed."
-    sudo yay -S zen-browser-bin
+    yay -S zen-browser-bin
 fi
 
 
