@@ -6,5 +6,6 @@
 . ./install-hypr.sh
 . ./install-dotfiles.sh
 . ./install-tmux.sh
+. ./install-mpd.sh
 . ./refresh-pacman.sh
 
