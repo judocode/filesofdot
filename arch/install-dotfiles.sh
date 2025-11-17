@@ -35,6 +35,8 @@ stow() {
 echo "stowing configs"
 
 stow tmux
+stow alacritty
+
 # nvim already has a whole folder and installation
 #stow nvim
 NVIM_OVERRIDES="$REPO_PATH/.config/nvim/lua/plugins/overrides.lua"

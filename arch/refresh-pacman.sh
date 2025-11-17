@@ -8,5 +8,5 @@ echo "Removing orphaned packages from pacman"
 
 echo "Updating pacman cache"
 # Reset cache
-sudo pacman -Sc
+# sudo pacman -Sc
 
