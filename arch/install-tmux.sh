@@ -1,5 +1,6 @@
 #!/bin/sh
 
+CONFIG_DIR=~/.config
 echo "Installing tmux"
 package="tmux"
 if pacman -Q "$package" &>/dev/null; then
@@ -10,7 +11,7 @@ else
 fi
 
 echo "Installing tpm"
-TPM_DIR="~/.config/tmux/plugins/tpm"
+TPM_DIR="$CONFIG_DIR/tmux/plugins/tpm"
 if [ -d "$TPM_DIR" ]; then
   echo "tpm already installed"
 else

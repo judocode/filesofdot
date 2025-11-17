@@ -24,8 +24,8 @@ stow() {
     echo "Removing existing symlink"
     rm "$config_path"
   elif [ -d "$config_path" ]; then
-    echo "Existing dir found"
-    mv -i -v "~/.config/$1" "~/.config/$1.bak"
+    echo "Existing dir $config_path found"
+    mv -i -v "$config_path" "$config_path.bak"
   fi
 
   echo "stowing $source_path in $config_path"
