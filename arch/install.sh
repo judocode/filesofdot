@@ -7,5 +7,6 @@
 . ./install-dotfiles.sh
 . ./install-tmux.sh
 . ./install-mpd.sh
+. ./install-joplin.sh
 . ./refresh-pacman.sh
 
