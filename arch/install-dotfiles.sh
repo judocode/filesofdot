@@ -36,6 +36,7 @@ echo "stowing configs"
 
 stow tmux
 stow alacritty
+stow mpd
 
 # nvim already has a whole folder and installation
 #stow nvim
