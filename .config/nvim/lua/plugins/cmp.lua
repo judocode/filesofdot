@@ -30,7 +30,7 @@ return {
             preselect = true,
             auto_insert = false,
           },
-          max_items = 2,
+          max_items = 5,
         },
         menu = {
           border = "rounded",
@@ -42,7 +42,7 @@ return {
             treesitter = { "lsp" },
           },
           auto_show = true,
-          auto_show_delay_ms = 300,
+          auto_show_delay_ms = 50,
         },
         trigger = { show_in_snippet = false },
       },
@@ -62,7 +62,7 @@ return {
             score_offset = 1000,
           },
           lsp = {
-            min_keyword_length = 2,
+            min_keyword_length = 0,
             score_offset = 0,
           },
           path = {

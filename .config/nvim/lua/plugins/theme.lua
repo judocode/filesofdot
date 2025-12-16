@@ -1,1 +1,10 @@
-/home/justus/.config/omarchy/current/theme/neovim.lua
+return {
+	{ "Mofiqul/vscode.nvim" },
+	{
+		"LazyVim/LazyVim",
+		opts = {
+			colorscheme = "vscode",
+			style = "light",
+		},
+	},
+}
