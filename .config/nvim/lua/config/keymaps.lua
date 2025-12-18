@@ -26,9 +26,9 @@ vim.keymap.set(
 
 vim.api.nvim_set_keymap(
   "v",
-  "<leader>tl",
+  "<leader>ml",
   ":lua SurroundUUIDsWithQuotesAndParentheses()<CR>",
-  { noremap = true, silent = true, desc = "[T]ext [L]ist" }
+  { noremap = true, silent = true, desc = "[M]acro [L]ist" }
 )
 
 -- Git
