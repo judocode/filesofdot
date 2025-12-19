@@ -4,6 +4,7 @@ return {
     opts = {
       spec = {
         { "<leader>m", group = "+macros" },
+        { "<leader>h", group = "+harpoon" },
       },
     },
   },
