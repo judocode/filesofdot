@@ -2,10 +2,6 @@
 -- Default keymaps that are always set: https://github.com/LazyVim/LazyVim/blob/main/lua/lazyvim/config/keymaps.lua
 -- Add any additional keymaps here
 
--- Recentering focus when paging up or down
--- vim.keymap.set("n", "<C-b>", "<C-b>zz")
--- vim.keymap.set("n", "<C-f>", "<C-f>zz")
-
 -- Preserving Ctrl-a and Ctrl-e functionality to move to beginning and end of line
 vim.keymap.set("i", "<C-e>", "<C-o>A", { noremap = true, silent = true })
 vim.keymap.set("i", "<C-a>", "<C-o>I", { noremap = true, silent = true })
@@ -17,19 +13,26 @@ vim.keymap.set(
   { noremap = true, silent = true, desc = "[C]opy relative file name" }
 )
 
-vim.keymap.set(
-  "n",
-  "<leader>j",
-  ':execute "!pnpm -F " . split(expand("%"), "/")[1] . " test " . expand("%")<CR>',
-  { noremap = true, silent = true, desc = "[J]est test" }
-)
-
 vim.api.nvim_set_keymap(
   "v",
   "<leader>ml",
   ":lua SurroundUUIDsWithQuotesAndParentheses()<CR>",
   { noremap = true, silent = true, desc = "[M]acro [L]ist" }
 )
+
+vim.api.nvim_set_keymap(
+  "n",
+  "<C-h>",
+  ":lua require('harpoon.ui').nav_prev()<CR>",
+  { noremap = true, silent = true, desc = "Harpoon previous" }
+)
+vim.api.nvim_set_keymap(
+  "n",
+  "<C-l>",
+  ":lua require('harpoon.ui').nav_next()<CR>",
+  { noremap = true, silent = true, desc = "Harpoon next" }
+)
+vim.keymap.set("n", "<F12>", vim.lsp.buf.definition, { noremap = true, silent = true, desc = "Go to definition" })
 
 -- Git
 -- vim.keymap.set("n", "<leader>ga", ":G add -p<CR>", { noremap = true, silent = true, desc = "[G]it [A]dd" })
