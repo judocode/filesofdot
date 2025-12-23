@@ -33,6 +33,12 @@ vim.api.nvim_set_keymap(
   { noremap = true, silent = true, desc = "Harpoon next" }
 )
 vim.keymap.set("n", "<F12>", vim.lsp.buf.definition, { noremap = true, silent = true, desc = "Go to definition" })
+vim.api.nvim_set_keymap(
+  "n",
+  "<leader>fg",
+  ":lua require('telescope').extensions.live_grep_args.live_grep_args()<CR>",
+  { noremap = true, silent = true, desc = "Live grep w/ args" }
+)
 
 -- Git
 -- vim.keymap.set("n", "<leader>ga", ":G add -p<CR>", { noremap = true, silent = true, desc = "[G]it [A]dd" })
