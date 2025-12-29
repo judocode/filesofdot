@@ -6,8 +6,6 @@ return {
       require("harpoon").setup(opts)
       local harpoon_mark = require("harpoon.mark")
       local harpoon_ui = require("harpoon.ui")
-      vim.keymap.set("n", "<C-h>", harpoon_ui.nav_prev, { noremap = true, silent = true, desc = "Harpoon prev file" })
-      vim.keymap.set("n", "<C-l>", harpoon_ui.nav_next, { noremap = true, silent = true, desc = "Harpoon next file" })
       vim.keymap.set(
         "n",
         "<leader>hp",
@@ -20,8 +18,6 @@ return {
         harpoon_ui.nav_next,
         { noremap = true, silent = true, desc = "Harpoon next file" }
       )
-      vim.keymap.set("n", "<C-h>", harpoon_ui.nav_prev, { noremap = true, silent = true, desc = "Harpoon prev file" })
-      vim.keymap.set("n", "<C-l>", harpoon_ui.nav_next, { noremap = true, silent = true, desc = "Harpoon next file" })
       vim.keymap.set(
         "n",
         "<leader>ha",

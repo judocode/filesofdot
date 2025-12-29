@@ -22,22 +22,9 @@ vim.api.nvim_set_keymap(
 
 vim.api.nvim_set_keymap(
   "n",
-  "<C-h>",
-  ":lua require('harpoon.ui').nav_prev()<CR>",
-  { noremap = true, silent = true, desc = "Harpoon previous" }
-)
-vim.api.nvim_set_keymap(
-  "n",
-  "<C-l>",
-  ":lua require('harpoon.ui').nav_next()<CR>",
-  { noremap = true, silent = true, desc = "Harpoon next" }
-)
-vim.keymap.set("n", "<F12>", vim.lsp.buf.definition, { noremap = true, silent = true, desc = "Go to definition" })
-vim.api.nvim_set_keymap(
-  "n",
-  "<leader>fg",
+  "<leader>se",
   ":lua require('telescope').extensions.live_grep_args.live_grep_args()<CR>",
-  { noremap = true, silent = true, desc = "Live grep w/ args" }
+  { noremap = true, silent = true, desc = "Greps (w/ args)" }
 )
 
 -- Git
