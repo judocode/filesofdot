@@ -27,6 +27,16 @@ vim.api.nvim_set_keymap(
   { noremap = true, silent = true, desc = "Greps (w/ args)" }
 )
 
+vim.keymap.set("n", "<leader>qr", function()
+  vim.lsp.buf.references(nil, {
+    on_list = function(opts)
+      -- replace quickfix list with references
+      vim.fn.setqflist({}, "r", opts)
+      vim.cmd("copen")
+    end,
+  })
+end, { desc = "LSP references → quickfix" })
+
 -- Git
 -- vim.keymap.set("n", "<leader>ga", ":G add -p<CR>", { noremap = true, silent = true, desc = "[G]it [A]dd" })
 

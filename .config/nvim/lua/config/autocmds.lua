@@ -16,3 +16,10 @@ vim.api.nvim_create_autocmd("FileType", {
     end, { buffer = ev.buf })
   end,
 })
+
+vim.api.nvim_create_autocmd("FileType", {
+  pattern = "harpoon",
+  callback = function()
+    vim.opt_local.wrap = false
+  end,
+})

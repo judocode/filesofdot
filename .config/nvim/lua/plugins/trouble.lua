@@ -25,13 +25,7 @@ return {
       },
     },
     keys = {
-      {
-        "<leader>cS",
-        function()
-          require("trouble").toggle({ mode = "lsp_references" })
-        end,
-        desc = "Toggle LSP References (Trouble)",
-      },
+      { "<leader>cS", "<cmd>Trouble lsp_references toggle<cr>", desc = "LSP references (Trouble)" },
     },
   },
 }
