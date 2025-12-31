@@ -16,7 +16,7 @@ return {
     },
     opts = {
       options = {
-        -- mode = "tabs",
+        mode = "tabs",
         -- stylua: ignore
         close_command = function(n)
           Snacks.bufdelete(n)

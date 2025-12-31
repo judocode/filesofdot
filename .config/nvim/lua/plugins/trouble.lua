@@ -25,7 +25,7 @@ return {
       },
     },
     keys = {
-      { "<leader>cS", "<cmd>Trouble lsp_references toggle<cr>", desc = "LSP references (Trouble)" },
+      { "<leader>cx", "<cmd>Trouble lsp_references toggle<cr>", desc = "LSP references (Trouble)" },
     },
   },
 }
