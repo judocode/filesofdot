@@ -750,7 +750,8 @@
                       "^com\\.iterm2\\.iTerm2$",
                       "^com\\.googlecode\\.iterm2$",
                       "^dev\\.zed\\.Zed$",
-                      "^com\\.microsoft\\.VSCode$"
+                      "^com\\.microsoft\\.VSCode$",
+                      "^com\\.todesktop\\..*"
                     ],
                     "type": "frontmost_application_unless"
                   }
@@ -777,7 +778,8 @@
                       "^com\\.iterm2\\.iTerm2$",
                       "^com\\.googlecode\\.iterm2$",
                       "^dev\\.zed\\.Zed$",
-                      "^com\\.microsoft\\.VSCode$"
+                      "^com\\.microsoft\\.VSCode$",
+                      "^com\\.todesktop\\..*"
                     ],
                     "type": "frontmost_application_unless"
                   }
@@ -1597,7 +1599,8 @@
                       "^com\\.iterm2\\.iTerm2$",
                       "^com\\.googlecode\\.iterm2$",
                       "^dev\\.zed\\.Zed$",
-                      "^com\\.microsoft\\.VSCode$"
+                      "^com\\.microsoft\\.VSCode$",
+                      "^com\\.todesktop\\..*"
                     ],
                     "type": "frontmost_application_unless"
                   }
@@ -1624,7 +1627,8 @@
                       "^com\\.iterm2\\.iTerm2$",
                       "^com\\.googlecode\\.iterm2$",
                       "^dev\\.zed\\.Zed$",
-                      "^com\\.microsoft\\.VSCode$"
+                      "^com\\.microsoft\\.VSCode$",
+                      "^com\\.todesktop\\..*"
                     ],
                     "type": "frontmost_application_unless"
                   }
